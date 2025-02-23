@@ -1,0 +1,50 @@
+Logging started at 21/02/2025 18:36:31.59 
+**********************
+Windows PowerShell transcript start
+Start time: 20250221183638
+Username: SISQO\fd92u
+RunAs User: SISQO\fd92u
+Configuration Name: 
+Machine: SISQO (Microsoft Windows NT 10.0.22631.0)
+Host Application: powershell -NoExit -Command Start-Transcript -Path 'C:\Users\fd92u\supwar\command_22output.txt' -Append
+Process ID: 7384
+PSVersion: 5.1.22621.4391
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.4391
+BuildVersion: 10.0.22621.4391
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\fd92u\supwar\command_22output.txt
+PS C:\Users\fd92u> docker ps -a
+              PORTS                                                        NAMES
+a88682546c5e   public.ecr.aws/supabase/postgres:15.8.1.020       "sh -c '\ncat <<'EOF'?"   7 minutes ago    Up 7 minutes
+ (healthy)    0.0.0.0:54322->5432/tcp                                      supabase_db_fd92u
+b124edb1389e   public.ecr.aws/supabase/studio:20250113-83c9420   "docker-entrypoint.s?"    30 minutes ago   Up 30 minute
+s (healthy)   0.0.0.0:54323->3000/tcp                                      supabase_studio_fd92u
+3b7b9b1a10a2   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s?"    30 minutes ago   Up 30 minute
+s (healthy)   8080/tcp                                                     supabase_pg_meta_fd92u
+612d0c06c6bc   public.ecr.aws/supabase/edge-runtime:v1.67.0      "sh -c 'cat <<'EOF' ?"    30 minutes ago   Up 30 minute
+s             8081/tcp                                                     supabase_edge_runtime_fd92u
+d9270535947b   public.ecr.aws/supabase/storage-api:v1.14.5       "docker-entrypoint.s?"    30 minutes ago   Up 4 minutes
+ (healthy)    5000/tcp                                                     supabase_storage_fd92u
+a5a1d64e5412   public.ecr.aws/supabase/postgrest:v12.2.0         "/bin/postgrest"          30 minutes ago   Up 30 minute
+s             3000/tcp                                                     supabase_rest_fd92u
+e98ee9022194   public.ecr.aws/supabase/realtime:v2.34.7          "/usr/bin/tini -s -g?"    30 minutes ago   Up 4 minutes
+ (healthy)    4000/tcp                                                     supabase_realtime_fd92u
+eb11187fa6e8   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh ?"    31 minutes ago   Up 30 minute
+s (healthy)   1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_fd92u
+c220ca3f97a9   public.ecr.aws/supabase/gotrue:v2.167.0           "auth"                    31 minutes ago   Up 4 minutes
+ (healthy)    9999/tcp                                                     supabase_auth_fd92u
+64d3614c25f8   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' ?"    31 minutes ago   Up 31 minute
+s (healthy)   8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_fd92u
+80539bc6e7de   public.ecr.aws/supabase/vector:0.28.1-alpine      "sh -c 'cat <<'EOF' ?"    31 minutes ago   Up 31 minute
+s (healthy)                                                                supabase_vector_fd92u
+14aaaa82aa17   public.ecr.aws/supabase/logflare:1.4.0            "sh -c 'cat <<'EOF' ?"    31 minutes ago   Up 6 minutes
+ (healthy)    0.0.0.0:54327->4000/tcp                                      supabase_analytics_fd92u
+PS C:\Users\fd92u> reg delete "HKCU\Software\Microsoft\Command Processor" /v AutoRun /f
+The operation completed successfully.
+PS C:\Users\fd92u> reg add "HKCU\Software\Microsoft\Command Processor" /v AutoRun /t REG_SZ /d "powershell -NoExit -Command Start-Transcript -Path C:\Users\fd92u\cmdlogs\alllogs.txt -Append" /f
+

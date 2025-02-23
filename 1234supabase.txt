@@ -1,0 +1,25 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250221204033
+Username: SISQO\fd92u
+RunAs User: SISQO\fd92u
+Configuration Name: 
+Machine: SISQO (Microsoft Windows NT 10.0.22631.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -file  C:\Users\fd92u\cmdlogs\log_commands.ps1 
+Process ID: 28664
+PSVersion: 5.1.22621.4391
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22621.4391
+BuildVersion: 10.0.22621.4391
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\fd92u\supwar\1234supabase.txt
+PS>$global:?
+True
+**********************
+Windows PowerShell transcript end
+End time: 20250221204033
+**********************
