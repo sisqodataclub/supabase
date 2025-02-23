@@ -20,4 +20,4 @@ jobs:
           SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
         run: |
           supabase link --project-ref $SUPABASE_PROJECT_ID
-          supabase db push --db-url "postgresql://postgres:$SUPABASE_DB_PASSWORD@aws-0-eu-west-2.pooler.supabase.com:5432/postgres"
+          supabase db push --db-url "postgresql://postgres.:$SUPABASE_PROJECT_ID:$SUPABASE_DB_PASSWORD@aws-0-eu-west-2.pooler.supabase.com:5432/postgres"
