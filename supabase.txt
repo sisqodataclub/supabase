@@ -4572,3 +4572,463 @@ SerializationVersion: 1.1.0.1
 **********************
 Transcript started, output file is C:\Users\fd92u\supwar\supabase.txt
 PS C:\Users\fd92u\cmdlogs> cd C:\Users\fd92u\cmdlogs
+PS C:\Users\fd92u\cmdlogs> & "C:\Users\fd92u\supwar\supabase_out.ps1" 
+& : The term 'C:\Users\fd92u\supwar\supabase_out.ps1' is not recognized as the name of a cmdlet, function, script file, 
+or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try 
+again.
+At line:1 char:3
++ & "C:\Users\fd92u\supwar\supabase_out.ps1"
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\fd92u\supwar\supabase_out.ps1:String) [], 
+CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+& : The term 'C:\Users\fd92u\supwar\supabase_out.ps1' is not recognized as the name of a cmdlet, function, script
+file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct
+and try again.
+At line:1 char:3
++ & "C:\Users\fd92u\supwar\supabase_out.ps1"
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\fd92u\supwar\supabase_out.ps1:String) [], CommandNotFoundExcep
+   tion
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\fd92u\cmdlogs> & "C:\Users\fd92u\cmdlogs\supabase_out.ps1" 
+Transcript started, output file is C:\Users\fd92u\supwar\supabase_ps.txt
+PS C:\Users\fd92u\cmdlogs> cd C:\Users\fd92u\cmdlogs
+PS C:\Users\fd92u\cmdlogs> & "C:\Users\fd92u\cmdlogs\supabase_out.ps1" 
+Transcript started, output file is C:\Users\fd92u\supwar\supabase_ps.txt
+PS C:\Users\fd92u\cmdlogs> docker ps -a
+CONTAINER ID   IMAGE                                             COMMAND                   CREATED       STATUS
+        PORTS                                                        NAMES
+a88682546c5e   public.ecr.aws/supabase/postgres:15.8.1.020       "sh -c '\ncat <<'EOF'?"   2 hours ago   Up 2 hours (hea
+lthy)   0.0.0.0:54322->5432/tcp                                      supabase_db_fd92u
+b124edb1389e   public.ecr.aws/supabase/studio:20250113-83c9420   "docker-entrypoint.s?"    3 hours ago   Up 3 hours (hea
+lthy)   0.0.0.0:54323->3000/tcp                                      supabase_studio_fd92u
+3b7b9b1a10a2   public.ecr.aws/supabase/postgres-meta:v0.84.2     "docker-entrypoint.s?"    3 hours ago   Up 3 hours (hea
+lthy)   8080/tcp                                                     supabase_pg_meta_fd92u
+612d0c06c6bc   public.ecr.aws/supabase/edge-runtime:v1.67.0      "sh -c 'cat <<'EOF' ?"    3 hours ago   Up 3 hours
+        8081/tcp                                                     supabase_edge_runtime_fd92u
+d9270535947b   public.ecr.aws/supabase/storage-api:v1.14.5       "docker-entrypoint.s?"    3 hours ago   Up 2 hours (hea
+lthy)   5000/tcp                                                     supabase_storage_fd92u
+a5a1d64e5412   public.ecr.aws/supabase/postgrest:v12.2.0         "/bin/postgrest"          3 hours ago   Up 3 hours
+        3000/tcp                                                     supabase_rest_fd92u
+e98ee9022194   public.ecr.aws/supabase/realtime:v2.34.7          "/usr/bin/tini -s -g?"    3 hours ago   Up 2 hours (hea
+lthy)   4000/tcp                                                     supabase_realtime_fd92u
+eb11187fa6e8   public.ecr.aws/supabase/inbucket:3.0.3            "/start-inbucket.sh ?"    3 hours ago   Up 3 hours (hea
+lthy)   1100/tcp, 2500/tcp, 0.0.0.0:54324->9000/tcp                  supabase_inbucket_fd92u
+c220ca3f97a9   public.ecr.aws/supabase/gotrue:v2.167.0           "auth"                    3 hours ago   Up 2 hours (hea
+lthy)   9999/tcp                                                     supabase_auth_fd92u
+64d3614c25f8   public.ecr.aws/supabase/kong:2.8.1                "sh -c 'cat <<'EOF' ?"    3 hours ago   Up 3 hours (hea
+lthy)   8001/tcp, 8088/tcp, 8443-8444/tcp, 0.0.0.0:54321->8000/tcp   supabase_kong_fd92u
+80539bc6e7de   public.ecr.aws/supabase/vector:0.28.1-alpine      "sh -c 'cat <<'EOF' ?"    3 hours ago   Up 3 hours (hea
+lthy)                                                                supabase_vector_fd92u
+14aaaa82aa17   public.ecr.aws/supabase/logflare:1.4.0            "sh -c 'cat <<'EOF' ?"    3 hours ago   Up 2 hours (hea
+lthy)   0.0.0.0:54327->4000/tcp                                      supabase_analytics_fd92u
+PS C:\Users\fd92u\cmdlogs> start supabase
+PS C:\Users\fd92u\cmdlogs> supabase ls
+unknown command "ls" for "supabase"
+
+Did you mean this?
+    db
+    sso
+
+Try rerunning the command with --debug to troubleshoot the error.
+PS C:\Users\fd92u\cmdlogs> supabase status
+Using workdir C:\Users\fd92u
+Stopped services: [supabase_imgproxy_fd92u supabase_pooler_fd92u]
+supabase local development setup is running.
+
+         API URL: http://127.0.0.1:54321
+     GraphQL URL: http://127.0.0.1:54321/graphql/v1
+  S3 Storage URL: http://127.0.0.1:54321/storage/v1/s3
+          DB URL: postgresql://postgres:postgres@127.0.0.1:54322/postgres
+      Studio URL: http://127.0.0.1:54323
+    Inbucket URL: http://127.0.0.1:54324
+      JWT secret: super-secret-jwt-token-with-at-least-32-characters-long
+        anon key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4M
+TI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0
+service_role key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImV4c
+CI6MTk4MzgxMjk5Nn0.EGIM96RAZx35lJzdJsyH-qQwv8Hdp7fsn3W0YpN81IU
+   S3 Access Key: 625729a08b95bf1b7ff351a663f3a23c
+   S3 Secret Key: 850181e4652dd023b7a98c58ae0d2d34bd487ee0cc3254aed6eda37307425907
+       S3 Region: local
+PS C:\Users\fd92u\cmdlogs> supabase db reset
+Using workdir C:\Users\fd92u
+Resetting local database...
+Recreating database...
+Setting up initial schema...
+Seeding globals from roles.sql...
+Skipping migration seed.sql... (file name must match pattern "<timestamp>_name.sql")
+Seeding data from supabase/seed.sql...
+Restarting containers...
+supabase_storage_fd92u container logs:
+{"level":30,"time":"2025-02-21T18:07:07.735Z","pid":1,"hostname":"d9270535947b","region":"not-specified","msg":"Server l
+istening at http://0.0.0.0:5000"}
+{"level":30,"time":"2025-02-21T18:07:07.749Z","pid":1,"hostname":"d9270535947b","region":"not-specified","type":"server"
+,"msg":"[Server] Started Successfully"}
+(node:1) [FSTDEP016] DeprecationWarning: You are accessing the deprecated "request.routeConfig" property. Use "request.r
+outeOptions.config" instead. Property "req.routeConfig" will be removed in `fastify@5`.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:1) [FSTDEP017] DeprecationWarning: You are accessing the deprecated "request.routerPath" property. Use "request.ro
+uteOptions.url" instead. Property "req.routerPath" will be removed in `fastify@5`.
+{"level":30,"time":"2025-02-21T18:07:09.308Z","pid":1,"hostname":"d9270535947b","region":"not-specified","reqId":"req-2"
+,"tenantId":"stub","project":"stub","reqId":"req-2","appVersion":"1.14.5","type":"request","req":{"region":"not-specifie
+d","traceId":"req-2","method":"GET","url":"/bucket","headers":{"host":"supabase_storage_fd92u:5000","x_forwarded_proto":
+"http","x_forwarded_host":"127.0.0.1","x_forwarded_port":"54321","x_forwarded_prefix":"/storage/v1/","x_real_ip":"172.18
+.0.1","user_agent":"SupabaseCLI/2.12.1"},"hostname":"supabase_storage_fd92u:5000","remoteAddress":"172.18.0.5","remotePo
+rt":44626},"res":{"statusCode":200,"headers":{"content_type":"application/json; charset=utf-8","content_length":"2"}},"r
+esponseTime":276.9038580060005,"role":"service_role","resources":[],"operation":"storage.bucket.list","msg":"stub | GET
+| 200 | 172.18.0.5 | req-2 | /bucket | SupabaseCLI/2.12.1"}
+{"level":30,"time":"2025-02-21T18:33:12.859Z","pid":1,"hostname":"d9270535947b","region":"not-specified","type":"shutdow
+n","msg":"[Server] Received SIGTERM, shutting down"}
+{"level":30,"time":"2025-02-21T18:33:14.637Z","pid":1,"hostname":"d9270535947b","region":"not-specified","type":"server"
+,"msg":"[Server] Stopping"}
+{"level":30,"time":"2025-02-21T18:33:15.213Z","pid":1,"hostname":"d9270535947b","region":"not-specified","type":"server"
+,"msg":"[Server] Exited"}
+{"level":30,"time":"2025-02-21T18:33:15.312Z","pid":1,"hostname":"d9270535947b","region":"not-specified","type":"pubsub"
+,"msg":"[PubSub] Stopping"}
+{"level":30,"time":"2025-02-21T18:33:15.539Z","pid":1,"hostname":"d9270535947b","region":"not-specified","type":"pubsub"
+,"msg":"[PubSub] Exited"}
+{"level":30,"time":"2025-02-21T18:33:15.699Z","pid":1,"hostname":"d9270535947b","region":"not-specified","type":"shutdow
+n","msg":"[Server] SIGTERM Shutdown successfully"}
+{"level":30,"time":"2025-02-21T18:33:44.276Z","pid":1,"hostname":"d9270535947b","region":"not-specified","msg":"Server l
+istening at http://0.0.0.0:5000"}
+{"level":30,"time":"2025-02-21T18:33:44.287Z","pid":1,"hostname":"d9270535947b","region":"not-specified","type":"server"
+,"msg":"[Server] Started Successfully"}
+(node:1) [FSTDEP016] DeprecationWarning: You are accessing the deprecated "request.routeConfig" property. Use "request.r
+outeOptions.config" instead. Property "req.routeConfig" will be removed in `fastify@5`.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:1) [FSTDEP017] DeprecationWarning: You are accessing the deprecated "request.routerPath" property. Use "request.ro
+uteOptions.url" instead. Property "req.routerPath" will be removed in `fastify@5`.
+{"level":30,"time":"2025-02-21T18:33:50.646Z","pid":1,"hostname":"d9270535947b","region":"not-specified","reqId":"req-2"
+,"tenantId":"stub","project":"stub","reqId":"req-2","appVersion":"1.14.5","type":"request","req":{"region":"not-specifie
+d","traceId":"req-2","method":"GET","url":"/bucket","headers":{"host":"supabase_storage_fd92u:5000","x_forwarded_proto":
+"http","x_forwarded_host":"127.0.0.1","x_forwarded_port":"54321","x_forwarded_prefix":"/storage/v1/","x_real_ip":"172.18
+.0.1","user_agent":"SupabaseCLI/2.12.1"},"hostname":"supabase_storage_fd92u:5000","remoteAddress":"172.18.0.5","remotePo
+rt":44398},"res":{"statusCode":200,"headers":{"content_type":"application/json; charset=utf-8","content_length":"2"}},"r
+esponseTime":130.1262089908123,"role":"service_role","resources":[],"operation":"storage.bucket.list","msg":"stub | GET
+| 200 | 172.18.0.5 | req-2 | /bucket | SupabaseCLI/2.12.1"}
+{"level":30,"time":"2025-02-22T01:05:52.617Z","pid":1,"hostname":"d9270535947b","region":"not-specified","type":"shutdow
+n","msg":"[Server] Received SIGTERM, shutting down"}
+{"level":30,"time":"2025-02-22T01:05:54.094Z","pid":1,"hostname":"d9270535947b","region":"not-specified","type":"server"
+,"msg":"[Server] Stopping"}
+{"level":30,"time":"2025-02-22T01:05:55.068Z","pid":1,"hostname":"d9270535947b","region":"not-specified","type":"server"
+,"msg":"[Server] Exited"}
+{"level":30,"time":"2025-02-22T01:05:55.167Z","pid":1,"hostname":"d9270535947b","region":"not-specified","type":"pubsub"
+,"msg":"[PubSub] Stopping"}
+{"level":30,"time":"2025-02-22T01:05:55.299Z","pid":1,"hostname":"d9270535947b","region":"not-specified","type":"pubsub"
+,"msg":"[PubSub] Exited"}
+{"level":30,"time":"2025-02-22T01:05:55.460Z","pid":1,"hostname":"d9270535947b","region":"not-specified","type":"shutdow
+n","msg":"[Server] SIGTERM Shutdown successfully"}
+supabase_storage_fd92u container is not ready: unhealthy
+Try rerunning the command with --debug to troubleshoot the error.
+PS C:\Users\fd92u\cmdlogs> start supabase
+PS C:\Users\fd92u\cmdlogs> supabase db push
+Using workdir C:\Users\fd92u
+Cannot find project ref. Have you run supabase link?
+Try rerunning the command with --debug to troubleshoot the error.
+PS C:\Users\fd92u\cmdlogs> supabase migration up
+Using workdir C:\Users\fd92u
+Connecting to local database...
+Skipping migration seed.sql... (file name must match pattern "<timestamp>_name.sql")
+Local database is up to date.
+PS C:\Users\fd92u\cmdlogs> supabase migration list
+Using workdir C:\Users\fd92u
+Cannot find project ref. Have you run supabase link?
+Try rerunning the command with --debug to troubleshoot the error.
+PS C:\Users\fd92u\cmdlogs> supabase migration up --project=C:\Users\fd92u\supwar
+Usage:
+  supabase migration up [flags]
+
+Flags:
+      --db-url string   Applies migrations to the database specified by the connection string (must be percent-encoded).
+  -h, --help            help for up
+      --include-all     Include all migrations not found on remote history table.
+      --linked          Applies pending migrations to the linked project.
+      --local           Applies pending migrations to the local database. (default true)
+
+Global Flags:
+      --create-ticket                            create a support ticket for any CLI error
+      --debug                                    output debug logs to stderr
+      --dns-resolver [ native | https ]          lookup domain names using the specified resolver (default native)
+      --experimental                             enable experimental features
+      --network-id string                        use the specified docker network instead of a generated one
+      --output [ pretty | json | toml | yaml ]   output format of status variables (default pretty)
+      --workdir string                           path to a Supabase project directory
+
+unknown flag: --project
+Try rerunning the command with --debug to troubleshoot the error.
+PS C:\Users\fd92u\cmdlogs> supabase init --C:\Users\fd92u\supwar
+Usage:
+  supabase init [flags]
+
+Flags:
+      --force                    Overwrite existing supabase\config.toml.
+  -h, --help                     help for init
+      --use-orioledb             Use OrioleDB storage engine for Postgres.
+      --with-intellij-settings   Generate IntelliJ IDEA settings for Deno.
+      --with-vscode-settings     Generate VS Code settings for Deno.
+
+Global Flags:
+      --create-ticket                            create a support ticket for any CLI error
+      --debug                                    output debug logs to stderr
+      --dns-resolver [ native | https ]          lookup domain names using the specified resolver (default native)
+      --experimental                             enable experimental features
+      --network-id string                        use the specified docker network instead of a generated one
+      --output [ pretty | json | toml | yaml ]   output format of status variables (default pretty)
+      --workdir string                           path to a Supabase project directory
+
+unknown flag: --C:\Users\fd92u\supwar
+Try rerunning the command with --debug to troubleshoot the error.
+PS C:\Users\fd92u\cmdlogs> cd C:\Users\fd92u
+PS C:\Users\fd92u> cd supwar
+PS C:\Users\fd92u\supwar> supabase migration up
+Connecting to local database...
+NOTICE (42P06): schema "supabase_migrations" already exists, skipping
+Applying migration 20250221205720_rightmove_data_new.sql...
+Local database is up to date.
+PS C:\Users\fd92u\supwar> psql -h localhost -p 54322 -U postgres -d postgres
+Password for user postgres:
+psql: error: connection to server at "localhost" (::1), port 54322 failed: FATAL:  password authentication failed for us
+er "postgres"
+PS C:\Users\fd92u\supwar> psql -h localhost -p 54322 -U postgres -d postgres
+Password for user postgres:
+psql (17.3, server 15.8)
+WARNING: Console code page (850) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+Type "help" for help.
+
+postgres=> \dt
+               List of relations
+ Schema |        Name        | Type  |  Owner
+--------+--------------------+-------+----------
+ public | rightmove_data2345 | table | postgres
+(1 row)
+
+
+postgres=> \q
+PS C:\Users\fd92u\supwar> supabase db diff -f 'dbdiff'
+Connecting to local database...
+Creating shadow database...
+Setting up initial schema...
+Seeding globals from roles.sql...
+Applying migration 20250221205720_rightmove_data_new.sql...
+Diffing schemas: bronze,extensions,gold,public,silver
+Finished supabase db diff on branch main.
+
+WARNING: The diff tool is not foolproof, so you may need to manually rearrange and modify the generated migration.
+Run supabase db reset to verify that the new migration does not generate errors.
+PS C:\Users\fd92u\supwar> supabase db push
+Forgot your password? Reset it from the Dashboard: https://supabase.com/dashboard/project/nvsxjetzyvombzhzuzdw/settings/
+database
+Enter your database password:
+Connecting to remote database...
+Remote migration versions not found in local migrations directory.
+
+Make sure your local git repo is up-to-date. If the error persists, try repairing the migration history table:
+supabase migration repair --status reverted 20250218164935 20250218165259 20250218191156 20250218201751 20250218205006 2
+0250218231956 20250218233040 20250218233716 20250218234137 20250218234828 20250218235541 20250219060752
+
+And update local migrations to match remote database:
+supabase db pull
+PS C:\Users\fd92u\supwar> supabase db push --db-url postgresql://postgres.nvsxjetzyvombzhzuzdw:uksg2023A11@aws-0-eu-west-2.pooler.supabase.com:5432/postgres
+Connecting to remote database...
+Remote migration versions not found in local migrations directory.
+
+Make sure your local git repo is up-to-date. If the error persists, try repairing the migration history table:
+supabase migration repair --status reverted 20250218164935 20250218165259 20250218191156 20250218201751 20250218205006 2
+0250218231956 20250218233040 20250218233716 20250218234137 20250218234828 20250218235541 20250219060752
+
+And update local migrations to match remote database:
+supabase db pull
+PS C:\Users\fd92u\supwar> supabase migration repair --status reverted 20250218164935 20250218165259 20250218191156 20250218201751 20250218205006 20250218231956 20250218233040 20250218233716 20250218234137 20250218234828 20250218235541 20250219060752
+Forgot your password? Reset it from the Dashboard: https://supabase.com/dashboard/project/nvsxjetzyvombzhzuzdw/settings/
+database
+Enter your database password:
+Connecting to remote database...
+NOTICE (42P06): schema "supabase_migrations" already exists, skipping
+NOTICE (42P07): relation "schema_migrations" already exists, skipping
+NOTICE (42701): column "statements" of relation "schema_migrations" already exists, skipping
+NOTICE (42701): column "name" of relation "schema_migrations" already exists, skipping
+Repaired migration history: [20250218164935 20250218165259 20250218191156 20250218201751 20250218205006 20250218231956 2
+0250218233040 20250218233716 20250218234137 20250218234828 20250218235541 20250219060752] => reverted
+Finished supabase migration repair.
+Run supabase migration list to show the updated migration history.
+PS C:\Users\fd92u\supwar> supabase db push --db-url postgresql://postgres.nvsxjetzyvombzhzuzdw:uksg2023A11@aws-0-eu-west-2.pooler.supabase.com:5432/postgres
+Connecting to remote database...
+Do you want to push these migrations to the remote database?
+ ? 20250221205720_rightmove_data_new.sql
+ ? 20250222164946_dbdiff.sql
+
+ [Y/n] n
+context canceled
+PS C:\Users\fd92u\supwar> psql -h aws-0-eu-west-2.pooler.supabase.com -p 5432 -U postgres -d postgres -f supabase/migrations/20250222164946_dbdiff.sql
+psql: error: connection to server at "aws-0-eu-west-2.pooler.supabase.com" (18.169.28.97), port 5432 failed: FATAL:  Ten
+ant or user not found
+connection to server at "aws-0-eu-west-2.pooler.supabase.com" (18.169.28.97), port 5432 failed: FATAL:  Tenant or user n
+ot found
+PS C:\Users\fd92u\supwar> supabase db push --db-url postgresql://postgres.nvsxjetzyvombzhzuzdw:uksg2023A11@aws-0-eu-west-2.pooler.supabase.com:5432/postgres
+Connecting to remote database...
+Skipping migration personalmigrations... (file name must match pattern "<timestamp>_name.sql")
+Do you want to push these migrations to the remote database?
+ ? 20250222164946_dbdiff.sql
+
+ [Y/n] y
+NOTICE (42P06): schema "supabase_migrations" already exists, skipping
+NOTICE (42P07): relation "schema_migrations" already exists, skipping
+NOTICE (42701): column "statements" of relation "schema_migrations" already exists, skipping
+NOTICE (42701): column "name" of relation "schema_migrations" already exists, skipping
+Applying migration 20250222164946_dbdiff.sql...
+NOTICE (42P06): schema "bronze" already exists, skipping
+ERROR: relation "try" already exists (SQLSTATE 42P07)
+At statement 1:
+create table "bronze"."try" (
+    "id" bigint generated by default as identity not null,
+    "created_at" timestamp with time zone not null default now(),
+    "aaliyah" text default 'hjhj'::text,
+    "francis" text default 'you'::text
+)
+Try rerunning the command with --debug to troubleshoot the error.
+PS C:\Users\fd92u\supwar> supabase db push --db-url postgresql://postgres.nvsxjetzyvombzhzuzdw:uksg2023A11@aws-0-eu-west-2.pooler.supabase.com:5432/postgres
+Connecting to remote database...
+Skipping migration personalmigrations... (file name must match pattern "<timestamp>_name.sql")
+Do you want to push these migrations to the remote database?
+ ? 20250222164946_dbdiff.sql
+
+ [Y/n] y
+NOTICE (42P06): schema "supabase_migrations" already exists, skipping
+NOTICE (42P07): relation "schema_migrations" already exists, skipping
+NOTICE (42701): column "statements" of relation "schema_migrations" already exists, skipping
+NOTICE (42701): column "name" of relation "schema_migrations" already exists, skipping
+Applying migration 20250222164946_dbdiff.sql...
+NOTICE (42P06): schema "bronze" already exists, skipping
+ERROR: relation "try_pkey" already exists (SQLSTATE 42P07)
+At statement 2:
+CREATE UNIQUE INDEX try_pkey ON bronze.try USING btree (id)
+Try rerunning the command with --debug to troubleshoot the error.
+PS C:\Users\fd92u\supwar> supabase db push --db-url postgresql://postgres.nvsxjetzyvombzhzuzdw:uksg2023A11@aws-0-eu-west-2.pooler.supabase.com:5432/postgres
+Connecting to remote database...
+Skipping migration personalmigrations... (file name must match pattern "<timestamp>_name.sql")
+Do you want to push these migrations to the remote database?
+ ? 20250222164946_dbdiff.sql
+
+ [Y/n] y
+NOTICE (42P06): schema "supabase_migrations" already exists, skipping
+NOTICE (42P07): relation "schema_migrations" already exists, skipping
+NOTICE (42701): column "statements" of relation "schema_migrations" already exists, skipping
+NOTICE (42701): column "name" of relation "schema_migrations" already exists, skipping
+Applying migration 20250222164946_dbdiff.sql...
+NOTICE (42P06): schema "bronze" already exists, skipping
+NOTICE (42P07): relation "try_pkey" already exists, skipping
+ERROR: index "try_pkey" is already associated with a constraint (SQLSTATE 55000)
+At statement 3:
+alter table "bronze"."try" add constraint "try_pkey" PRIMARY KEY using index "try_pkey"
+                               ^
+Try rerunning the command with --debug to troubleshoot the error.
+PS C:\Users\fd92u\supwar> supabase db diff -f 'dbdiffremote'
+Connecting to local database...
+Creating shadow database...
+Skipping migration personalmigrations... (file name must match pattern "<timestamp>_name.sql")
+Setting up initial schema...
+Seeding globals from roles.sql...
+Applying migration 20250222164946_dbdiff.sql...
+ERROR: relation "bronze.try" does not exist (SQLSTATE 42P01)
+At statement 1:
+alter table "bronze"."try" enable row level security
+Try rerunning the command with --debug to troubleshoot the error.
+PS C:\Users\fd92u\supwar> supabase db diff -f 'dbdiff'
+Connecting to local database...
+Creating shadow database...
+Skipping migration personalmigrations... (file name must match pattern "<timestamp>_name.sql")
+Setting up initial schema...
+Seeding globals from roles.sql...
+Applying migration 20250222164946_dbdiff.sql...
+ERROR: relation "bronze.try" does not exist (SQLSTATE 42P01)
+At statement 1:
+alter table "bronze"."try" enable row level security
+Try rerunning the command with --debug to troubleshoot the error.
+PS C:\Users\fd92u\supwar> supabase db diff -f 'dbdiff'
+Connecting to local database...
+Creating shadow database...
+Skipping migration personalmigrations... (file name must match pattern "<timestamp>_name.sql")
+Setting up initial schema...
+Seeding globals from roles.sql...
+Diffing schemas: bronze,extensions,gold,public,silver
+Finished supabase db diff on branch main.
+
+WARNING: The diff tool is not foolproof, so you may need to manually rearrange and modify the generated migration.
+Run supabase db reset to verify that the new migration does not generate errors.
+PS C:\Users\fd92u\supwar> supabase db push --db-url postgresql://postgres.nvsxjetzyvombzhzuzdw:uksg2023A11@aws-0-eu-west-2.pooler.supabase.com:5432/postgres
+Connecting to remote database...
+Skipping migration personalmigrations... (file name must match pattern "<timestamp>_name.sql")
+Do you want to push these migrations to the remote database?
+ ? 20250222180736_dbdiff.sql
+
+ [Y/n] y
+NOTICE (42P06): schema "supabase_migrations" already exists, skipping
+NOTICE (42P07): relation "schema_migrations" already exists, skipping
+NOTICE (42701): column "statements" of relation "schema_migrations" already exists, skipping
+NOTICE (42701): column "name" of relation "schema_migrations" already exists, skipping
+Applying migration 20250222180736_dbdiff.sql...
+NOTICE (42P06): schema "bronze" already exists, skipping
+ERROR: relation "try" already exists (SQLSTATE 42P07)
+At statement 1:
+create table "bronze"."try" (
+    "id" bigint generated by default as identity not null,
+    "created_at" timestamp with time zone not null default now(),
+    "aaliyah" text default 'hjhj'::text,
+    "francis" text default 'you'::text
+)
+Try rerunning the command with --debug to troubleshoot the error.
+PS C:\Users\fd92u\supwar> supabase db push --db-url postgresql://postgres.nvsxjetzyvombzhzuzdw:uksg2023A11@aws-0-eu-west-2.pooler.supabase.com:5432/postgres
+Connecting to remote database...
+Skipping migration personalmigrations... (file name must match pattern "<timestamp>_name.sql")
+Do you want to push these migrations to the remote database?
+ ? 20250222180736_dbdiff.sql
+
+ [Y/n] y
+NOTICE (42P06): schema "supabase_migrations" already exists, skipping
+NOTICE (42P07): relation "schema_migrations" already exists, skipping
+NOTICE (42701): column "statements" of relation "schema_migrations" already exists, skipping
+NOTICE (42701): column "name" of relation "schema_migrations" already exists, skipping
+Applying migration 20250222180736_dbdiff.sql...
+NOTICE (42P06): schema "bronze" already exists, skipping
+ERROR: relation "try_pkey" already exists (SQLSTATE 42P07)
+At statement 2:
+CREATE UNIQUE INDEX try_pkey ON bronze.try USING btree (id)
+Try rerunning the command with --debug to troubleshoot the error.
+PS C:\Users\fd92u\supwar> supabase db push --db-url postgresql://postgres.nvsxjetzyvombzhzuzdw:uksg2023A11@aws-0-eu-west-2.pooler.supabase.com:5432/postgres
+Connecting to remote database...
+Skipping migration personalmigrations... (file name must match pattern "<timestamp>_name.sql")
+Do you want to push these migrations to the remote database?
+ ? 20250222180736_dbdiff.sql
+
+ [Y/n] y
+NOTICE (42P06): schema "supabase_migrations" already exists, skipping
+NOTICE (42P07): relation "schema_migrations" already exists, skipping
+NOTICE (42701): column "statements" of relation "schema_migrations" already exists, skipping
+NOTICE (42701): column "name" of relation "schema_migrations" already exists, skipping
+Applying migration 20250222180736_dbdiff.sql...
+NOTICE (42P06): schema "bronze" already exists, skipping
+ERROR: index "try_pkey" is already associated with a constraint (SQLSTATE 55000)
+At statement 2:
+alter table "bronze"."try" add constraint "try_pkey" PRIMARY KEY using index "try_pkey"
+                               ^
+Try rerunning the command with --debug to troubleshoot the error.
+PS C:\Users\fd92u\supwar> supabase db push --db-url postgresql://postgres.nvsxjetzyvombzhzuzdw:uksg2023A11@aws-0-eu-west-2.pooler.supabase.com:5432/postgres
+Connecting to remote database...
+Skipping migration personalmigrations... (file name must match pattern "<timestamp>_name.sql")
+Do you want to push these migrations to the remote database?
+ ? 20250222180736_dbdiff.sql
+
+ [Y/n] y
+NOTICE (42P06): schema "supabase_migrations" already exists, skipping
+NOTICE (42P07): relation "schema_migrations" already exists, skipping
+NOTICE (42701): column "statements" of relation "schema_migrations" already exists, skipping
+NOTICE (42701): column "name" of relation "schema_migrations" already exists, skipping
+Applying migration 20250222180736_dbdiff.sql...
+NOTICE (42P06): schema "bronze" already exists, skipping
+NOTICE (42P06): schema "gold" already exists, skipping
+NOTICE (42P06): schema "silver" already exists, skipping
+Finished supabase db push.

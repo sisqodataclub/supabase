@@ -455,3 +455,88 @@ NOTICE (42P06): schema "bronze" already exists, skipping
 NOTICE (42P06): schema "gold" already exists, skipping
 NOTICE (42P06): schema "silver" already exists, skipping
 Finished supabase db push.
+PS C:\Users\fd92u\supwar> git add .
+warning: in the working copy of '.vscode/extensions.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of '.vscode/settings.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'data.sql', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'roles.sql', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'schema.sql', LF will be replaced by CRLF the next time Git touches it
+warning: adding embedded git repository: supabase-database-backup
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint:
+hint:   git submodule add <url> supabase-database-backup
+hint:
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint:
+hint:   git rm --cached supabase-database-backup
+hint:
+hint: See "git help submodule" for more information.
+warning: in the working copy of 'supabase/.gitignore', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'supabase/config.toml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'supabase/filenam12e.sql', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'supabase/filename.sql', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'supabase/migrations/20250222180736_dbdiff.sql', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'supabase/seed.sql', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'supabase12_output.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'supabase_outputhdhd.txt', LF will be replaced by CRLF the next time Git touches it
+PS C:\Users\fd92u\supwar> git commit -m "Initialize Supabase project"
+[master (root-commit) 1e0b55e] Initialize Supabase project
+ 32 files changed, 48084 insertions(+)
+ create mode 100644 .vscode/extensions.json
+ create mode 100644 .vscode/settings.json
+ create mode 100644 1234supabase.txt
+ create mode 100644 command2_output.txt
+ create mode 100644 command_22output.txt
+ create mode 100644 command_output.txt
+ create mode 100644 command_output56.txt
+ create mode 100644 data.sql
+ create mode 100644 history.txt
+ create mode 100644 migrations/20250218231954_create_rightmove_data.sql
+ create mode 100644 migrations/20250218233039_create_rightmove_data.sql
+ create mode 100644 migrations/20250218233715_create_rightmove_data.sql
+ create mode 100644 migrations/20250218234135_create_rightmove_data.sql
+ create mode 100644 migrations/20250218234827_create_rightmove_data.sql
+ create mode 100644 migrations/20250218235539_create_rightmove_data.sql
+ create mode 100644 migrations/20250219141140_create_rightmove_data233.sql
+ create mode 100644 roles.sql
+ create mode 100644 schema.sql
+ create mode 160000 supabase-database-backup
+ create mode 100644 supabase.txt
+ create mode 100644 supabase/.gitignore
+ create mode 100644 supabase/config.toml
+ create mode 100644 supabase/filenam12e.sql
+ create mode 100644 supabase/filename.sql
+ create mode 100644 supabase/migrations/20250222180736_dbdiff.sql
+ create mode 100644 supabase/migrations/personalmigrations/20250221205720_rightmove_data_new.sql
+ create mode 100644 supabase/seed.sql
+ create mode 100644 supabase/seed123.sql
+ create mode 100644 supabase12_output.txt
+ create mode 100644 supabase_output.txt
+ create mode 100644 supabase_outputhdhd.txt
+ create mode 100644 supabase_ps.txt
+PS C:\Users\fd92u\supwar> git branch -M main
+
+PS C:\Users\fd92u\supwar> git remote add origin https://github.com/sisqodataclub/supabase
+
+PS C:\Users\fd92u\supwar> git push -u origin main
+To https://github.com/sisqodataclub/supabase
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/sisqodataclub/supabase'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+PS C:\Users\fd92u\supwar> git push -u origin main
+To https://github.com/sisqodataclub/supabase
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/sisqodataclub/supabase'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
