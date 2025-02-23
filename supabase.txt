@@ -5117,3 +5117,188 @@ hint: have locally. This is usually caused by another repository pushing to
 hint: the same ref. If you want to integrate the remote changes, use
 hint: 'git pull' before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+PS C:\Users\fd92u\supwar> git add .
+
+PS C:\Users\fd92u\supwar> git commit -m "Initial commit"
+[main 4d9cdca] Initial commit
+ 10 files changed, 545 insertions(+), 120 deletions(-)
+ delete mode 100644 migrations/20250218231954_create_rightmove_data.sql
+ delete mode 100644 migrations/20250218233039_create_rightmove_data.sql
+ delete mode 100644 migrations/20250218233715_create_rightmove_data.sql
+ delete mode 100644 migrations/20250218234135_create_rightmove_data.sql
+ delete mode 100644 migrations/20250218234827_create_rightmove_data.sql
+ delete mode 100644 migrations/20250218235539_create_rightmove_data.sql
+ delete mode 100644 migrations/20250219141140_create_rightmove_data233.sql
+ delete mode 160000 supabase-database-backup
+PS C:\Users\fd92u\supwar> git branch -M main
+
+PS C:\Users\fd92u\supwar> git remote add origin https://github.com/sisqodataclub/supabase
+error: remote origin already exists.
+PS C:\Users\fd92u\supwar> git push -u origin main
+To https://github.com/sisqodataclub/supabase
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/sisqodataclub/supabase'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: 'git pull' before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+PS C:\Users\fd92u\supwar> git push -u origin main --force
+Enumerating objects: 35, done.
+Counting objects: 100% (35/35), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (34/34), done.
+Writing objects: 100% (35/35), 78.42 KiB | 1.04 MiB/s, done.
+Total 35 (delta 9), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (9/9), done.
+To https://github.com/sisqodataclub/supabase
+ + efbe24c...4d9cdca main -> main (forced update)
+branch 'main' set up to track 'origin/main'.
+PS C:\Users\fd92u\supwar> supabase link --project-ref https://supabase.com/dashboard/project/nvsxjetzyvombzhzuzdw
+Invalid project ref format. Must be like `abcdefghijklmnopqrst`.
+Try rerunning the command with --debug to troubleshoot the error.
+PS C:\Users\fd92u\supwar> supabase link --project-ref nvsxjetzyvombzhzuzdw
+Enter your database password (or leave blank to skip):
+Finished supabase link.
+WARNING: Local config differs from linked project. Try updating supabase\config.toml
+diff supabase\config.toml nvsxjetzyvombzhzuzdw
+--- supabase\config.toml
++++ nvsxjetzyvombzhzuzdw
+@@ -2,8 +2,8 @@
+
+ [api]
+ enabled = true
+-schemas = ["public", "graphql_public"]
+-extra_search_path = ["public", "extensions"]
++schemas = ["bronze", "public"]
++extra_search_path = ["bronze"]
+ max_rows = 1000
+ port = 54321
+ external_url = "http://127.0.0.1:54321"
+@@ -50,8 +50,7 @@
+
+ [auth]
+ enabled = true
+-site_url = "http://127.0.0.1:3000"
+-additional_redirect_urls = ["https://127.0.0.1:3000"]
++site_url = "http://localhost:3000"
+ jwt_expiry = 3600
+ enable_refresh_token_rotation = true
+ refresh_token_reuse_interval = 10
+@@ -81,9 +80,9 @@
+ [auth.email]
+ enable_signup = true
+ double_confirm_changes = true
+-enable_confirmations = false
++enable_confirmations = true
+ secure_password_change = false
+-max_frequency = "1s"
++max_frequency = "1m0s"
+ otp_length = 6
+ otp_expiry = 3600
+ [auth.email.template]
+PS C:\Users\fd92u\supwar> supabase link
+Selected project: nvsxjetzyvombzhzuzdw
+Enter your database password (or leave blank to skip):
+Connecting to remote database...
+failed to connect to postgres: failed to connect to `host=aws-0-eu-west-2.pooler.supabase.com user=postgres.nvsxjetzyvombzhzuzdw database=postgres`: failed SASL auth (invalid SCRAM server-final-mes
+sage received from server)
+Try rerunning the command with --debug to troubleshoot the error.
+PS C:\Users\fd92u\supwar> supabase db pull
+Forgot your password? Reset it from the Dashboard: https://supabase.com/dashboard/project/nvsxjetzyvombzhzuzdw/settings/database
+Enter your database password:
+Connecting to remote database...
+Skipping migration personalmigrations... (file name must match pattern "<timestamp>_name.sql")
+Skipping migration personalmigrations... (file name must match pattern "<timestamp>_name.sql")
+                                                                                              Setting up initial schema...
+Seeding globals from roles.sql...
+                                 Applying migration 20250222180736_dbdiff.sql...
+ERROR: relation "bronze.try" does not exist (SQLSTATE 42P01)
+At statement 1:
+alter table "bronze"."try" enable row level security
+Try rerunning the command with --debug to troubleshoot the error.
+PS C:\Users\fd92u\supwar> supabase db pull
+Forgot your password? Reset it from the Dashboard: https://supabase.com/dashboard/project/nvsxjetzyvombzhzuzdw/settings/database
+Enter your database password:
+Connecting to remote database...
+Skipping migration personalmigrations... (file name must match pattern "<timestamp>_name.sql")
+                                                                                              The remote database's migration history does not match local files in supabase\migrations directory.
+
+Make sure your local git repo is up-to-date. If the error persists, try repairing the migration history table:
+supabase migration repair --status reverted 20250222180736
+PS C:\Users\fd92u\supwar> supabase migration repair --status reverted 20250222180736
+Forgot your password? Reset it from the Dashboard: https://supabase.com/dashboard/project/nvsxjetzyvombzhzuzdw/settings/database
+Enter your database password:
+Connecting to remote database...
+NOTICE (42P06): schema "supabase_migrations" already exists, skipping
+NOTICE (42P07): relation "schema_migrations" already exists, skipping
+NOTICE (42701): column "statements" of relation "schema_migrations" already exists, skipping
+NOTICE (42701): column "name" of relation "schema_migrations" already exists, skipping
+Repaired migration history: [20250222180736] => reverted
+Finished supabase migration repair.
+Run supabase migration list to show the updated migration history.
+PS C:\Users\fd92u\supwar> Run supabase migration list
+Run : The term 'Run' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the 
+spelling of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ Run supabase migration list
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (Run:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+Run : The term 'Run' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is
+correct and try again.
+At line:1 char:1
++ Run supabase migration list
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (Run:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\fd92u\supwar> supabase migration list
+Forgot your password? Reset it from the Dashboard: https://supabase.com/dashboard/project/nvsxjetzyvombzhzuzdw/settings/database
+Enter your database password:
+Connecting to remote database...
+Skipping migration personalmigrations... (file name must match pattern "<timestamp>_name.sql")
+
+
+    LOCAL ? REMOTE ? TIME (UTC)
+  ???????????????????????????????
+PS C:\Users\fd92u\supwar> supabase db pull
+Forgot your password? Reset it from the Dashboard: https://supabase.com/dashboard/project/nvsxjetzyvombzhzuzdw/settings/database
+Enter your database password:
+Connecting to remote database...
+Skipping migration personalmigrations... (file name must match pattern "<timestamp>_name.sql")
+Schema written to supabase\migrations\20250223190814_remote_schema.sql
+Update remote migration history table? [Y/n] y
+NOTICE (42P06): schema "supabase_migrations" already exists, skipping
+NOTICE (42P07): relation "schema_migrations" already exists, skipping
+NOTICE (42701): column "statements" of relation "schema_migrations" already exists, skipping
+NOTICE (42701): column "name" of relation "schema_migrations" already exists, skipping
+Repaired migration history: [20250223190814] => applied
+Finished supabase db pull.
+The auth and storage schemas are excluded. Run supabase db pull --schema auth,storage again to diff them.
+PS C:\Users\fd92u\supwar> supabase db pull --schema auth,storage
+Forgot your password? Reset it from the Dashboard: https://supabase.com/dashboard/project/nvsxjetzyvombzhzuzdw/settings/database
+Enter your database password:
+Connecting to remote database...
+Skipping migration personalmigrations... (file name must match pattern "<timestamp>_name.sql")
+Skipping migration personalmigrations... (file name must match pattern "<timestamp>_name.sql")
+Setting up initial schema....
+Seeding globals from roles.sql...
+Applying migration 20250223190814_remote_schema.sql...
+Schema written to supabase\migrations\20250223191143_remote_schema.sql
+Update remote migration history table? [Y/n] y
+NOTICE (42P06): schema "supabase_migrations" already exists, skipping
+NOTICE (42P07): relation "schema_migrations" already exists, skipping
+NOTICE (42701): column "statements" of relation "schema_migrations" already exists, skipping
+NOTICE (42701): column "name" of relation "schema_migrations" already exists, skipping
+Repaired migration history: [20250223191143] => applied
+Finished supabase db pull.
+PS C:\Users\fd92u\supwar> git add .
+warning: in the working copy of 'supabase/migrations/20250223190814_remote_schema.sql', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'supabase/migrations/20250223191143_remote_schema.sql', LF will be replaced by CRLF the next time Git touches it
+PS C:\Users\fd92u\supwar> git commit -m "Initial commit"
+[main 65c416e] Initial commit
+ 5 files changed, 783 insertions(+), 152 deletions(-)
+ delete mode 100644 supabase/migrations/20250222180736_dbdiff.sql
+ create mode 100644 supabase/migrations/20250223190814_remote_schema.sql
+ create mode 100644 supabase/migrations/20250223191143_remote_schema.sql
