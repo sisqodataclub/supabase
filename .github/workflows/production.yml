@@ -3,8 +3,9 @@ name: Deploy Migrations to Production
 on:
   push:
     branches:
-      - main
-  workflow_dispatch:
+      - main  # ✅ Runs on push to main
+  pull_request:  # ✅ Runs when a PR is created or updated
+  workflow_dispatch:  # ✅ Allows manual execution
 
 jobs:
   deploy:
@@ -22,5 +23,8 @@ jobs:
         with:
           version: latest
 
-      - run: supabase link --project-ref $SUPABASE_PROJECT_ID
-      - run: supabase db push
+      - name: Link Supabase Project
+        run: supabase link --project-ref $SUPABASE_PROJECT_ID
+
+      - name: Push Database Migrations
+        run: supabase db push
