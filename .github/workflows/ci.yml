@@ -1,12 +1,8 @@
 name: CI
 
 on:
-  push:   # ✅ Runs on push
-    branches:
-      - main  # ✅ Runs only on the `main` branch (change as needed)
-      - dev   # ✅ Add other branches if required
-  pull_request:  # ✅ Runs on PRs
-  workflow_dispatch:  # ✅ Allows manual execution
+  pull_request:
+  workflow_dispatch:
 
 jobs:
   test:
