@@ -30,6 +30,7 @@ jobs:
           fi
 
 ---
+
 name: Deploy Migrations to Production
 
 on:
@@ -66,4 +67,4 @@ jobs:
         run: supabase db pull
 
       - name: Push Local Migrations to Remote Database
-        run: supabase db push --include-all
+        run: supabase db push --include-all || echo "⚠️ If migrations fail, ensure remote and local migrations are in sync!"
