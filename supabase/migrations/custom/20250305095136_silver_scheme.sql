@@ -6,10 +6,11 @@
     CREATE SCHEMA IF NOT EXISTS silver;
     CREATE SCHEMA IF NOT EXISTS gold;
     
-CREATE TABLE IF NOT EXISTS silver.agents_df_sil (
+CREATE TABLE IF NOT EXISTS silver.agents_df (
     id SERIAL PRIMARY KEY,
     "agent_name" TEXT,
-    "agent_address" TEXT
+    "agent_address" TEXT,
+    "rowid" TEXT
 );
 -- SQL Migration Script
 
@@ -19,12 +20,13 @@ CREATE TABLE IF NOT EXISTS silver.agents_df_sil (
     CREATE SCHEMA IF NOT EXISTS silver;
     CREATE SCHEMA IF NOT EXISTS gold;
     
-CREATE TABLE IF NOT EXISTS silver.locations_df_sil (
+CREATE TABLE IF NOT EXISTS silver.locations_df (
     id SERIAL PRIMARY KEY,
     "full_address" TEXT,
-    "latitude" FLOAT,
-    "longitude" FLOAT,
-    "property_address" TEXT
+    "latitude" DOUBLE PRECISION,
+    "longitude" DOUBLE PRECISION,
+    "property_address" TEXT,
+    "rowid" TEXT
 );
 -- SQL Migration Script
 
@@ -34,11 +36,12 @@ CREATE TABLE IF NOT EXISTS silver.locations_df_sil (
     CREATE SCHEMA IF NOT EXISTS silver;
     CREATE SCHEMA IF NOT EXISTS gold;
     
-CREATE TABLE IF NOT EXISTS silver.properties_df_sil (
+CREATE TABLE IF NOT EXISTS silver.properties_df (
     id SERIAL PRIMARY KEY,
     "property_type" TEXT,
     "bedrooms" TEXT,
-    "bathrooms" TEXT
+    "bathrooms" TEXT,
+    "rowid" TEXT
 );
 -- SQL Migration Script
 
@@ -48,11 +51,12 @@ CREATE TABLE IF NOT EXISTS silver.properties_df_sil (
     CREATE SCHEMA IF NOT EXISTS silver;
     CREATE SCHEMA IF NOT EXISTS gold;
     
-CREATE TABLE IF NOT EXISTS silver.listings_df_sil (
+CREATE TABLE IF NOT EXISTS silver.listings_df (
     id SERIAL PRIMARY KEY,
     "parsed_post_date" TEXT,
-    "parsed_available_date" TEXT,
+    "parsed_available_date" TIMESTAMP,
     "monthly_price" TEXT,
     "listing_id" TEXT,
-    "url" TEXT
+    "url" TEXT,
+    "rowid" TEXT
 );
