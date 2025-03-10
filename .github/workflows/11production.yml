@@ -1,8 +1,14 @@
-name: CI
+name: Deploy Migrations to Production
 
 on:
-  pull_request:
+  push:
+    branches:
+      - main
   workflow_dispatch:
+
+
+
+
 
 jobs:
   test:
