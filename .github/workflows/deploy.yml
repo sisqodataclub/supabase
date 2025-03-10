@@ -22,5 +22,15 @@ jobs:
         with:
           version: latest
 
+      - name: Pull Remote Migrations
+        run: supabase db pull
+
+      - name: Repair Migration History (If Needed)
+        run: supabase migration repair || echo "Skipping migration repair"
+
+      - name: Push Local Migrations to Remote Database
+        run: supabase db push --include-all || echo "⚠️ Ensure remote and local migrations are in sync!"
+
+
       - run: supabase link --project-ref $SUPABASE_PROJECT_ID
       - run: supabase db push
